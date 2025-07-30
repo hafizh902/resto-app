@@ -3,8 +3,24 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class item extends Model
+class Item extends Model
 {
-    //
+    use SoftDeletes, HasFactory;
+
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'category_id',
+        'img',
+        'is_active',
+        'created_at',
+        'updated_at'
+    ];
+    protected $dates = ['deleted_at'];
+
+    public function category() {}
 }
