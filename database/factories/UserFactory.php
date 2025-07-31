@@ -26,10 +26,10 @@ class UserFactory extends Factory
         return [
             'username' => fake()->unique()->username(),
             "password" => static::$password ??= Hash::make('password'),
-            'name' => fake()->name(),
+            'fullname' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             "phone" => fake()->phoneNumber(),
-            "role_id"=> fake()->numberBetween(1 ,4)
+           'role_id' => \App\Models\Role::inRandomOrder()->first()?->id,
         ];
     }
 

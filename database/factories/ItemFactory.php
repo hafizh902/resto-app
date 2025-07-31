@@ -17,12 +17,12 @@ class ItemFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->word(),
+            'name' => $this->faker->unique()->word(),
             'description' => $this->faker->sentence(),
             'price' => $this->faker->numberBetween(1000, 100000),
-            'category_id' => $this->faker->numberBetween(1, 5), // Assuming you have 5 categories
-            'image' => $this->faker->imageUrl(640, 480, 'food', true),
-            'status' => $this->faker->boolean(80),
+            'category_id' => \App\Models\Category::inRandomOrder()->first()->id,
+            'img' => $this->faker->imageUrl(640, 480, 'food', true),
+            'is_active' => $this->faker->boolean(80),
         ];
     }
 }
