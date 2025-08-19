@@ -19,6 +19,7 @@ return new class extends Migration
             $table->decimal('price', 10, 2);
             $table->integer('tax');
             $table->decimal('total_price', 10, 2);
+            $table->string('img')->nullable();
             $table->softDeletes();
             $table->timestamps();
 

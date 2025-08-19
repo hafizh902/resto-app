@@ -41,6 +41,7 @@
     <!-- Template Javascript -->
     <script src="{{ asset('assets/customer/js/main.js') }}"></script>
 
+    @yield('scripts')
 
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();

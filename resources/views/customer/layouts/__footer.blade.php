@@ -34,8 +34,8 @@
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-item">
                         <h4 class="text-light mb-3">Hubungi Kami</h4>
-                        <p>Alamat: Jl. Sangkuriang No.8, Padasuka, Kec. Cimahi Tengah, Kota Cimahi, Jawa Barat 40526</p>
-                        <p>Email: info@codepolitan.com</p>
+                        <p>Alamat: Jl. BontoBulaeng RT.03 </p>
+                        <p>Email: info@gmail.com</p>
                         <p>Telp: 0899-9488-990</p>
                     </div>
                 </div>
@@ -62,8 +62,8 @@
                     <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                     <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                     <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                    Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a> Distributed By <a
-                        class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                    Designed By <a class="border-bottom" href="">HTML Codex</a> Distributed By <a
+                        class="border-bottom" href="">ThemeWagon</a>
                 </div>
             </div>
         </div>

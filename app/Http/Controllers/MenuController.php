@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\item;
-use Illuminate\Support\Facades\Session;
+use App\Models\Order;
+use App\Models\Order_item;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class MenuController extends Controller
 {
@@ -16,31 +20,5 @@ class MenuController extends Controller
         // Pass the items to the menu view
         return view('customer.menu', ['items' => $items]);
     }
-    public function cart()
-    {
-        $cart = Session::get('cart', []);
-        return view('customer.cart',compact('cart'));
-}
-   public function addToCart(Request $request)
-   {
-         $menuId = $request->input('mid');
-         $menu = item::find($menuId);
 
-         if (!$menu) {
-             return response()->json(['succes' => false, 'message' => 'Menu not found'], 404);
-   }
-   $cart = Session::get('cart', []);
-
-   if (isset($cart[$menuId])) {
-       $cart[$menuId]['quantity']++;
-   } else {
-       $cart[$menuId] = [
-           'id' => $menu->id,
-           'name' => $menu->name,
-           'price' => $menu->price,
-              'quantity' => 1,
-       ];  }
-    Session::put('cart', $cart);
-    return response()->json(['success' => true, 'message' => 'Menu added to cart']);
-}
 }

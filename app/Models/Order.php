@@ -10,7 +10,7 @@ class Order extends Model
 {
     use SoftDeletes, HasFactory;
     protected $fillable = [
-        "order_number",
+        'order_code',
         'user_id',
         'subtotal',
         'tax',
@@ -19,7 +19,6 @@ class Order extends Model
         'table_number',
         'payment_method',
         'note',
-        'total_price',
         'created_at',
         'updated_at'
     ];

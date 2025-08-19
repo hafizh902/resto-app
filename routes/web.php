@@ -1,19 +1,15 @@
-
 <?php
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AdminMenuController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CartController; // tambahkan ini
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
 
 // Public Routes
@@ -32,7 +28,13 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::get('/menu', [MenuController::class, 'index'])->name('menu');
 Route::get('/menu/{id}', [MenuController::class, 'show'])->name('menu.show');
 Route::get('/shop-detail/{id}', [MenuController::class, 'show'])->name('shop-detail');
-Route::get('/cart', [MenuController::class, 'cart'])->name('cart');
+
+// Cart Routes → diarahkan ke CartController
+Route::get('/cart', [CartController::class, 'index'])->name('cart');
+Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
+Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart.update');
+Route::post('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
+
 Route::get('/checkout', [MenuController::class, 'checkout'])->name('checkout');
 
 // Admin Routes (Protected)
@@ -77,12 +79,6 @@ Route::get('/contact', function () {
 Route::get('/testimonial', function () {
     return view('testimonial');
 })->name('testimonial');
-Route::get('/cart', function () {
-    return view('customer.cart');
-})->name('cart');
 Route::get('/404', function () {
     return view('errors.404');
 })->name('404');
-Route::get('/checkout', function () {
-    return view('customer.checkout');
-})->name('checkout');
