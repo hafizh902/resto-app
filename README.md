@@ -27,3 +27,4 @@
     </li>
 </ol>
 <p>Dengan mengikuti langkah-langkah di atas, Anda akan siap untuk menggunakan aplikasi ini.</p>
+<h1>WARNING THIS PROJECT USE FOR STUDY ONLY </h1>
